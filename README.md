@@ -5,6 +5,7 @@ BMSZC Petrik Szoftverfejlesztőinek js automatizált tesztelést bemutató proje
 ## Projekt létrehozás lépései
 
 - Projekt létrehozása (ha még nincs package.json állomány)
+  - test script-nek "vitest" legyen megadva
 
 ```sh
 npm init
@@ -25,7 +26,7 @@ npm install
 ```
 
 - Tesztek futtatása
-  
+
 ```sh
 npm run test
 ```
@@ -33,6 +34,7 @@ npm run test
 ## Javasolt vscode bővítmények
 
 - [vitest](https://marketplace.visualstudio.com/items?itemName=vitest.explorer)
+  - A bővítmény megfelelő működéséhez szükséges lehet vite / vitest config fájl létrehozására
 - [vitest snippets](https://marketplace.visualstudio.com/items?itemName=deinsoftware.vitest-snippets)
 
 ## Teszt fájl létrehozása
@@ -40,8 +42,8 @@ npm run test
 - Teszt fájloknak az alábbi reguláros kifejezésnek kell megfelelnie: `**/__tests__/**/*.[jt]s?(x), **/?(*.)+(spec|test).[tj]s?(x)`
 - Reguláris kifejezés jelentése
   - Bármilyen javascriptnek megfelelő fájl, ami:
-    - Bárhol egy `__tests__` mappában vagy annak almappáiban van.
-    - A fájl neve `.spec` vagy `.test` -el végződik
+    - Bárhol egy `__tests__` nevű mappában vagy annak almappáiban van vagy
+    - A fájl neve `.spec`-el vagy `.test`-el végződik
     - Fájlok kiterjesztése az alábbi lehet:
       - js: hagyományos javascript fájl
       - ts: typescript fájl
