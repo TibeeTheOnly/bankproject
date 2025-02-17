@@ -17,6 +17,11 @@
   "scripts": {
     "test": "vitest"
   },
+  "vitest": {
+    "test": {
+      "include": ["src/**/*.test.js"]
+    }
+  },
   "devDependencies": {
     "vitest": "^3.0.5"
   }
