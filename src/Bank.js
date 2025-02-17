@@ -65,6 +65,9 @@ export class Bank {
         if (typeof osszeg !== 'number' || osszeg <= 0) {
             throw new Error("Amount must be a positive number");
         }
+        if (honnan.osszeg <= osszeg) {
+            throw new Error("Not enough balance on source account");
+        }
         const sourceAccount = this.accounts.get(honnan);
         const destinationAccount = this.accounts.get(hova);
         if (sourceAccount.egyenleg < osszeg) {

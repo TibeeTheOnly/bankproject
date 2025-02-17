@@ -60,4 +60,18 @@ describe("ujSzamla", () => {
         expect(bank.egyenleg("87654321-87654321")).toBe(500);
     });
 
+    it("should throw error on invalid transfer", () => {
+        const bank = new Bank();
+        bank.ujSzamla("John Doe", "12345678-12345678");
+        bank.ujSzamla("Jane Doe", "87654321-87654321");
+        bank.egyenlegFeltolt("12345678-12345678", 1000);
+        expect(() => bank.utal(null, "87654321-87654321", 500)).toThrowError("Source and destination account numbers cannot be null, empty, and must exist");
+        expect(() => bank.utal("12345678-12345678", null, 500)).toThrowError("Source and destination account numbers cannot be null, empty, and must exist");
+        expect(() => bank.utal("12345678-12345678", "87654321-87654321", null)).toThrowError("Amount must be a positive number");
+        expect(() => bank.utal("12345678-12345678", "87654321-87654321", -500)).toThrowError("Amount must be a positive number");
+        expect(() => bank.utal("12345678-12345678", "87654321-87654321", 0)).toThrowError("Amount must be a positive number");
+        expect(() => bank.utal("12345678-12345678", "87654321-87654321", 1500)).toThrowError("Not enough balance on source account");
+    });
+
+
 });
