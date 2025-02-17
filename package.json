@@ -1,0 +1,23 @@
+{
+  "name": "js-bankproject-template",
+  "version": "1.0.0",
+  "description": "BMSZC Petrik Szoftverfejlesztőinek js automatizált tesztelést bemutató projektje.",
+  "homepage": "https://github.com/TibeeTheOnly/bankproject#readme",
+  "bugs": {
+    "url": "https://github.com/TibeeTheOnly/bankproject/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TibeeTheOnly/bankproject.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "vitest": "^3.0.5"
+  }
+}
